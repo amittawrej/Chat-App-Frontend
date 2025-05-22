@@ -22,7 +22,8 @@ const {socket}=useSelector(store=>store.socket);
           userId: authUser._id,
         },
       });
-      // console.log(socket);
+     
+      console.log(socket);
       dispatch(setSocket(socket));
 
       socket.on("getOnlineUsers", (onlineUsers) => {

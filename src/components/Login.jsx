@@ -23,16 +23,12 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(
-        `${server}/api/v1/user/login`,
-        loginData,
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-          withCredentials: true,
-        }
-      );
+      const res = await axios.post(`${server}/api/v1/user/login`, loginData, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        withCredentials: true,
+      });
       dispatch(setAuthUser(res.data));
       toast(res.data.message);
       navigate("/");
@@ -71,6 +67,7 @@ const Login = () => {
               <span>Password</span>
             </label>
             <input
+              autocomplete="current-password"
               className=" input input-bordered h-10"
               type="password"
               value={loginData.password}

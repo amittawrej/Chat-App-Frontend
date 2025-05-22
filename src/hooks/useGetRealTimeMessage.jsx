@@ -19,7 +19,7 @@ const useGetRealTimeMessage = () => {
         socket.off("newMessage");
       }
     };
-  }, [socket, dispatch, messages]);
+  }, [socket, messages]);
 
   return messages;
 };
